@@ -1,6 +1,7 @@
 ...
+    # תיקון טיפוס וסינון תאריכים לא חוקיים
     calendar_df['תאריך'] = pd.to_datetime(calendar_df['תאריך'], errors='coerce')
-    calendar_df = calendar_df.dropna(subset=['תאריך'])  # סינון תאריכים שגויים
+    calendar_df = calendar_df.dropna(subset=['תאריך'])
 
     for week in cal:
         row = "|"
