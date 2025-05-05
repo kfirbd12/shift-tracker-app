@@ -2,7 +2,7 @@ st.sidebar.image("https://img.icons8.com/clouds/100/calendar.png", width=60)
 st.sidebar.title("תפריט ניווט")
 menu = st.sidebar.radio("בחר פעולה", ["📊 דשבורד", "📆 לוח שנה", "📄 דוחות PDF", "⚙️ ניהול (Admin Only)"])
 
-if menu == "📆 לוח שנה":
+if menu == \"📆 לוח שנה\":
     st.title("📆 לוח שנה אינטראקטיבי")
     # --- הבטחת טיפוס datetime וסינון ---
     calendar_df = st.session_state.shift_data.copy()
@@ -71,5 +71,3 @@ elif menu == "📄 דוחות PDF":
 elif menu == "⚙️ ניהול (Admin Only)":
     st.title("⚙️ ניהול משתמשים")
     st.write("כאן מנהל המערכת יוכל להוסיף / לערוך / למחוק משתמשים.")
-        except Exception as e:
-            st.error("שגיאה במחיקה")
