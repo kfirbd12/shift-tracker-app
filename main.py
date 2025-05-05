@@ -2,7 +2,7 @@ st.sidebar.image("https://img.icons8.com/clouds/100/calendar.png", width=60)
 st.sidebar.title("תפריט ניווט")
 menu = st.sidebar.radio("בחר פעולה", ["📊 דשבורד", "📆 לוח שנה", "📄 דוחות PDF", "⚙️ ניהול (Admin Only)"])
 
-elif menu == "📆 לוח שנה":
+if menu == "📆 לוח שנה":
     st.title("📆 לוח שנה אינטראקטיבי")
     # --- הבטחת טיפוס datetime וסינון ---
     calendar_df = st.session_state.shift_data.copy()
