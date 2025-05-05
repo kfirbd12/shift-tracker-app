@@ -1,5 +1,6 @@
 ...
-    # תיקון טיפוס וסינון תאריכים לא חוקיים
+    # --- הבטחת טיפוס datetime וסינון ---
+    calendar_df = calendar_df.copy()
     calendar_df['תאריך'] = pd.to_datetime(calendar_df['תאריך'], errors='coerce')
     calendar_df = calendar_df.dropna(subset=['תאריך'])
 
