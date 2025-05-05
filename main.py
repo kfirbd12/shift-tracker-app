@@ -1,4 +1,9 @@
-if menu == "📆 לוח שנה":
+st.sidebar.image("https://img.icons8.com/clouds/100/calendar.png", width=60)
+st.sidebar.title("תפריט ניווט")
+menu = st.sidebar.radio("בחר פעולה", ["📊 דשבורד", "📆 לוח שנה", "📄 דוחות PDF", "⚙️ ניהול (Admin Only)"])
+
+elif menu == "📆 לוח שנה":
+    st.title("📆 לוח שנה אינטראקטיבי")
     # --- הבטחת טיפוס datetime וסינון ---
     calendar_df = st.session_state.shift_data.copy()
     calendar_df['תאריך'] = pd.to_datetime(calendar_df['תאריך'], errors='coerce')
@@ -54,5 +59,17 @@ if menu == "📆 לוח שנה":
             st.success("האירוע נמחק")
             st.experimental_set_query_params()  # נקה URL
             st.experimental_rerun()
+
+elif menu == "📊 דשבורד":
+    st.title("📊 דשבורד")
+    st.write("כאן יוצג סיכום חודשי / סטטיסטיקות.")
+
+elif menu == "📄 דוחות PDF":
+    st.title("📄 דוחות PDF")
+    st.write("כאן תוכל להפיק דוחות PDF לפי טווח תאריכים.")
+
+elif menu == "⚙️ ניהול (Admin Only)":
+    st.title("⚙️ ניהול משתמשים")
+    st.write("כאן מנהל המערכת יוכל להוסיף / לערוך / למחוק משתמשים.")
         except Exception as e:
             st.error("שגיאה במחיקה")
