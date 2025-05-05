@@ -1,8 +1,13 @@
 ...
     # --- הבטחת טיפוס datetime וסינון ---
-    calendar_df = calendar_df.copy()
+    calendar_df = st.session_state.shift_data.copy()
     calendar_df['תאריך'] = pd.to_datetime(calendar_df['תאריך'], errors='coerce')
     calendar_df = calendar_df.dropna(subset=['תאריך'])
+    calendar_df = calendar_df[
+        (calendar_df['משתמש'] == st.session_state.user) &
+        (calendar_df['תאריך'].dt.month == month) &
+        (calendar_df['תאריך'].dt.year == year)
+    ]
 
     for week in cal:
         row = "|"
