@@ -1,4 +1,4 @@
-...
+if menu == "📆 לוח שנה":
     # --- הבטחת טיפוס datetime וסינון ---
     calendar_df = st.session_state.shift_data.copy()
     calendar_df['תאריך'] = pd.to_datetime(calendar_df['תאריך'], errors='coerce')
