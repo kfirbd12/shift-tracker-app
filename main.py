@@ -1,4 +1,7 @@
 ...
+    calendar_df['תאריך'] = pd.to_datetime(calendar_df['תאריך'], errors='coerce')
+    calendar_df = calendar_df.dropna(subset=['תאריך'])  # סינון תאריכים שגויים
+
     for week in cal:
         row = "|"
         for day in week:
